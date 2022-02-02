@@ -58,4 +58,12 @@ return require('packer').startup(function()
   use 'folke/tokyonight.nvim'
   use 'marko-cerovac/material.nvim'
   -- use https://github.com/nvim-lualine/lualine.nvim
+
+  -- lsp
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
+  use {
+    "ray-x/lsp_signature.nvim",
+    after = "nvim-lspconfig",
+  }
 end)
