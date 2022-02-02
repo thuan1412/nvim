@@ -8,6 +8,10 @@ require'nvim-treesitter.configs'.setup {
       -- jsx_fragment = '{/* %s */}',
       -- jsx_attribute = '// %s',
       comment = '// %s'
-    }
-  }
+    },
+  },
+  highlight = {
+    enable = true,
+    use_languagetree = true,
+  },
 }

@@ -6,7 +6,7 @@ local opts = { silent = true }
 nvim_set_keymap("n", "<space>t", "<cmd>Telescope<CR>", opts)
 nvim_set_keymap("n", "<space>w", "<cmd>Telescope live_grep<CR>", opts)
 nvim_set_keymap("n", "<space>f", "<cmd>Telescope find_files<CR>", opts)
-nvim_set_keymap("n", "<space>a", "<cmd>Telescope code_actions<CR>", opts)
+nvim_set_keymap("n", "<space>a", "<cmd>Telescope lsp_code_actions<CR>", opts)
 nvim_set_keymap("n", "<space>b", "<cmd>Telescope buffers<CR>", opts)
 -- nvim_set_keymap("n", "<space>fh", "<cmd>Telescope find_files hidden=true<CR>", opts)
 nvim_set_keymap("n", "<space>h", "<cmd>Telescope oldfiles only_cwd=true<CR>", opts)

@@ -23,11 +23,12 @@ set.clipboard = "unnamedplus"
 -- set smartcase
 set.ignorecase = true
 set.smartcase = true
-set.undofile = true -- keep a permanent undo (across restarts)
 
 -- others
 set.cmdheight = 1
-set.signcolumn = 1
+set.signcolumn = 'yes'
+set.timeoutlen = 500
+set.undofile = true -- keep a permanent undo (across restarts)
 nvim_set_keymap("n", "<Esc>", "<cmd>:noh<CR>", keymap_opts)
 
 -- set colorscheme
