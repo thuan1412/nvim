@@ -38,6 +38,21 @@ return require('packer').startup(function()
   use 'tpope/vim-unimpaired'
   use 'tpope/vim-dadbod'
 
+  -- comment
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+  -- tree sitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
   -- themes/colorschemes
   use {'dracula/vim', as = 'dracula'}
   use 'folke/tokyonight.nvim'

@@ -3,6 +3,8 @@ local g = vim.g
 local wo = vim.wo
 local bo = vim.bo
 local set = vim.opt
+local nvim_set_keymap = vim.api.nvim_set_keymap
+local keymap_opts = { silent = true }
  
 -- line number + width
 set.relativenumber = true
@@ -25,10 +27,11 @@ set.undofile = true -- keep a permanent undo (across restarts)
 
 -- others
 set.cmdheight = 1
+nvim_set_keymap("n", "<Esc>", "<cmd>:noh<CR>", keymap_opts)
 
 -- set colorscheme
-vim.g.tokyonight_style = "day" -- TODO: move this config into plugins/init.lua
+vim.g.tokyonight_style = "night" -- TODO: move this config into plugins/init.lua
 vim.g.material_style = "oceanic"
-vim.cmd 'colorscheme material'
---vim.cmd[[colorscheme tokyonight]]
+--vim.cmd 'colorscheme material'
+vim.cmd[[colorscheme tokyonight]]
 require('settings.mappings')
