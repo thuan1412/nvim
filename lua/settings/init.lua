@@ -5,7 +5,7 @@ local bo = vim.bo
 local set = vim.opt
 local nvim_set_keymap = vim.api.nvim_set_keymap
 local keymap_opts = { silent = true }
- 
+
 -- line number + width
 set.relativenumber = true
 set.number = true
@@ -27,6 +27,7 @@ set.undofile = true -- keep a permanent undo (across restarts)
 
 -- others
 set.cmdheight = 1
+set.signcolumn = 1
 nvim_set_keymap("n", "<Esc>", "<cmd>:noh<CR>", keymap_opts)
 
 -- set colorscheme
