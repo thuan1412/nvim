@@ -5,7 +5,7 @@ require('Comment').setup({
     line = '?',
     ---Block-comment toggle keymap
     block = 'gbc',
-  }, 
+  },
   pre_hook = function(ctx)
     local U = require 'Comment.utils'
     local location = nil

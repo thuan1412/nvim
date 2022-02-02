@@ -1,6 +1,5 @@
 local present, lspconfig = pcall(require, "lspconfig")
 local lspconfig_util = require("lspconfig.util")
-
 if not present then
   print("lsp not found")
   return
@@ -27,7 +26,7 @@ local servers = {
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim'},
+        globals = {'vim', 'use'},
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
@@ -127,3 +126,13 @@ end
 --     },
 --   },
 -- }
+
+-- replace the default lsp diagnostic symbols
+local function lspSymbol(name, icon)
+   vim.fn.sign_define("LspDiagnosticsSign" .. name, { text = icon, numhl = "LspDiagnosticsDefault" .. name })
+end
+
+lspSymbol("Error", "")
+lspSymbol("Information", "")
+lspSymbol("Hint", "")
+lspSymbol("Warning", "")

@@ -8,7 +8,6 @@ end
 
 -- Only required if you have packer configured as `opt`
 -- vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function()
 
   use {
@@ -16,7 +15,7 @@ return require('packer').startup(function()
   }
 
   -- telescope
-  use { 
+  use {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
     require = {
@@ -66,4 +65,7 @@ return require('packer').startup(function()
     "ray-x/lsp_signature.nvim",
     after = "nvim-lspconfig",
   }
+
+  -- gitsigns
+  use 'lewis6991/gitsigns.nvim'
 end)
