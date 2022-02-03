@@ -6,8 +6,8 @@ if not present then
 end
 
 vim.opt.completeopt = "menuone,noselect"
--- require("luasnip.loaders.from_vscode").load()
-require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").load()
+-- require("luasnip.loaders.from_vscode").lazy_load()
 -- local nvim_set_keymap = vim.api.nvim_set_keymap
 -- nvim_set_keymap("n", "3", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
 -- cmp.event:on('confirm_done', function ()
@@ -92,9 +92,9 @@ cmp.setup {
    },
    sources = {
       { name = "luasnip" },
-      -- { name = "nvim_lsp", keyword_length=1 },
-      -- { name = "buffer", keyword_length=1 },
-      -- { name = "nvim_lua" },
-      -- { name = "path" },
+      { name = "nvim_lsp", keyword_length=1 },
+      { name = "buffer", keyword_length=1 },
+      { name = "nvim_lua" },
+      { name = "path" },
    },
 }

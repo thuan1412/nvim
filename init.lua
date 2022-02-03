@@ -1,4 +1,3 @@
-require('impatient')
 require('settings')
 
 ----- PLUGINS
@@ -9,3 +8,4 @@ require("plugins.nvim-treesitter")
 require("plugins.Comment")
 require("plugins.cmp")
 require('gitsigns').setup()
+-- require('impatient')

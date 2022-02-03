@@ -66,13 +66,14 @@ return require('packer').startup(function()
     after = "nvim-lspconfig",
   }
 
-  -- con
+  -- cmp
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/nvim-cmp'
 
   -- luasnip source
+  use "rafamadriz/friendly-snippets"
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
 
@@ -92,4 +93,9 @@ return require('packer').startup(function()
 
   -- impatent
   use 'lewis6991/impatient.nvim'
+
+  -- status line
+  --
+
+  -- use 'famiu/bufdelete.nvim'
 end)
