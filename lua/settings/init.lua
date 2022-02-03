@@ -10,7 +10,6 @@ local keymap_opts = { silent = true }
 set.relativenumber = true
 set.number = true
 set.numberwidth = 4
-
 -- tabsize
 local TAB_WIDTH = 2
 set.tabstop = TAB_WIDTH

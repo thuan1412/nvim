@@ -5,6 +5,9 @@ local opts = { silent = true }
 -- Telescope utils
 nvim_set_keymap("n", "<space>t", "<cmd>Telescope<CR>", opts)
 nvim_set_keymap("n", "<space>w", "<cmd>Telescope live_grep<CR>", opts)
+nvim_set_keymap("n", "<space>q", "<cmd>Telescope quickfix<CR>", opts)
+nvim_set_keymap("n", "<space>c", "<cmd>Telescope commands<CR>", opts)
+nvim_set_keymap("n", "<space>ch", "<cmd>Telescope command_history<CR>", opts)
 nvim_set_keymap("n", "<space>f", "<cmd>Telescope find_files<CR>", opts)
 nvim_set_keymap("n", "<space>a", "<cmd>Telescope lsp_code_actions<CR>", opts)
 nvim_set_keymap("n", "<space>b", "<cmd>Telescope buffers<CR>", opts)
