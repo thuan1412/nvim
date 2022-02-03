@@ -26,7 +26,7 @@ local servers = {
       },
       diagnostics = {
         -- Get the language server to recognize the `vim` global
-        globals = {'vim', 'use'},
+        globals = {'vim', 'use', 'packer_bootstrap'},
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
