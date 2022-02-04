@@ -29,3 +29,6 @@ nvim_set_keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 nvim_set_keymap("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 nvim_set_keymap("n", "gi", "<cmd>Telescope lsp_implementations path_display={'shorten'}<CR>", opts)
 
+-- Format
+nvim_set_keymap("n", "<leader>f", "<cmd> Format<CR>", opts)
+nvim_set_keymap("n", "<Esc>", "<cmd>:noh<CR>", opts)

@@ -3,8 +3,6 @@
 -- local wo = vim.wo
 -- local bo = vim.bo
 local set = vim.opt
-local nvim_set_keymap = vim.api.nvim_set_keymap
-local keymap_opts = { silent = true }
 
 -- line number + width
 set.relativenumber = true
@@ -28,7 +26,6 @@ set.cmdheight = 1
 set.signcolumn = 'yes'
 set.timeoutlen = 500
 set.undofile = true -- keep a permanent undo (across restarts)
-nvim_set_keymap("n", "<Esc>", "<cmd>:noh<CR>", keymap_opts)
 
 -- set colorscheme
 vim.g.tokyonight_style = "night" -- TODO: move this config into plugins/init.lua
