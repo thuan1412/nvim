@@ -1,45 +1,46 @@
 local present, lspconfig = pcall(require, "lspconfig")
-local lspconfig_util = require("lspconfig.util")
+local lspconfig_util = require "lspconfig.util"
 if not present then
-  print("lsp not found")
+  print "lsp not found"
   return
 end
 --
 -- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
 local sumneko_root_path = "/home/thuando/software/lua-language-server"
 local sumneko_binary = "/home/thuando/software/lua-language-server/bin/lua-language-server"
-local lua_runtime_path = vim.split(package.path, ';')
+local lua_runtime_path = vim.split(package.path, ";")
 table.insert(lua_runtime_path, "lua/?.lua")
 table.insert(lua_runtime_path, "lua/?/init.lua")
 
 local servers = {
-  html = true,
-  sumneko_lua = {
-  cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
-  settings = {
-    Lua = {
-      runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-        version = 'LuaJIT',
-        -- Setup your lua path
-        path = lua_runtime_path,
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = {'vim', 'use', 'packer_bootstrap'},
-      },
-      workspace = {
-        -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
-      -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
+  html = true, sumneko_lua = {
+    cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
+    settings = {
+      Lua = {
+        runtime = {
+          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+          version = "LuaJIT",
+          -- Setup your lua path
+          path = lua_runtime_path,
+        },
+        diagnostics = {
+          -- Get the language server to recognize the `vim` global
+          globals = { "vim", "use", "packer_bootstrap" },
+        },
+        workspace = {
+          -- Make the server aware of Neovim runtime files
+          library = vim.api.nvim_get_runtime_file("", true),
+        },
+        -- Do not send telemetry data containing a randomized but unique identifier
+        telemetry = {
+          enable = false,
+        },
       },
     },
   },
-},
   tsserver = true,
+  -- eslint = true,
+  volar = true,
   gopls = {
     root_dir = function(fname)
       local Path = require "plenary.path"
@@ -63,7 +64,7 @@ local servers = {
     flags = {
       debounce_text_changes = 200,
     },
-  }
+  },
 }
 
 local setup_server = function(server, config)
@@ -129,7 +130,7 @@ end
 
 -- replace the default lsp diagnostic symbols
 local function lspSymbol(name, icon)
-   vim.fn.sign_define("LspDiagnosticsSign" .. name, { text = icon, numhl = "LspDiagnosticsDefault" .. name })
+  vim.fn.sign_define("LspDiagnosticsSign" .. name, { text = icon, numhl = "LspDiagnosticsDefault" .. name })
 end
 
 lspSymbol("Error", "")
