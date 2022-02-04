@@ -1,7 +1,7 @@
 -- general setting
-local g = vim.g
-local wo = vim.wo
-local bo = vim.bo
+-- local g = vim.g
+-- local wo = vim.wo
+-- local bo = vim.bo
 local set = vim.opt
 local nvim_set_keymap = vim.api.nvim_set_keymap
 local keymap_opts = { silent = true }
