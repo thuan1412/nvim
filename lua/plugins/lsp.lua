@@ -13,7 +13,8 @@ table.insert(lua_runtime_path, "lua/?.lua")
 table.insert(lua_runtime_path, "lua/?/init.lua")
 
 local servers = {
-  html = true, sumneko_lua = {
+  html = true,
+  sumneko_lua = {
     cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
     settings = {
       Lua = {

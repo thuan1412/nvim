@@ -15,7 +15,6 @@ nvim_set_keymap("n", "<space>b", "<cmd>Telescope buffers<CR>", opts)
 nvim_set_keymap("n", "<space>h", "<cmd>Telescope oldfiles only_cwd=true<CR>", opts)
 nvim_set_keymap("n", "<space>km", "<cmd>Telescope keymaps<CR>", opts)
 
-
 -- LSP API
 nvim_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
 nvim_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)

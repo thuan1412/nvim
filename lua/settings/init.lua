@@ -23,7 +23,7 @@ set.smartcase = true
 
 -- others
 set.cmdheight = 1
-set.signcolumn = 'yes'
+set.signcolumn = "yes"
 set.timeoutlen = 500
 set.undofile = true -- keep a permanent undo (across restarts)
 
@@ -31,5 +31,5 @@ set.undofile = true -- keep a permanent undo (across restarts)
 vim.g.tokyonight_style = "night" -- TODO: move this config into plugins/init.lua
 vim.g.material_style = "oceanic"
 --vim.cmd 'colorscheme material'
-vim.cmd[[colorscheme tokyonight]]
-require('settings.mappings')
+vim.cmd [[colorscheme tokyonight]]
+require "settings.mappings"
