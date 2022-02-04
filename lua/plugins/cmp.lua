@@ -7,6 +7,13 @@ end
 
 vim.opt.completeopt = "menuone,noselect"
 require("luasnip.loaders.from_vscode").load()
+
+-- config luasnip
+local luasnip = require("luasnip")
+luasnip.filetype_extend("typescript", { "javascript" })
+luasnip.filetype_extend("javascriptreact", { "javascript" })
+luasnip.filetype_extend("typescriptreact", { "javascriptreact", "typescript", "javascript" })
+
 -- require("luasnip.loaders.from_vscode").lazy_load()
 -- local nvim_set_keymap = vim.api.nvim_set_keymap
 -- nvim_set_keymap("n", "3", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
