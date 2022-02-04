@@ -278,21 +278,27 @@ table.insert(components.active[3], comps.line_percentage)
 -- table.insert(components.active[3], comps.vi_mode.right)
 
 
--- TreeSitter
--- local ts_utils = require("nvim-treesitter.ts_utils")
--- local ts_parsers = require("nvim-treesitter.parsers")
--- local ts_queries = require("nvim-treesitter.query")
+local gps = require("nvim-gps")
+require("nvim-gps").setup()
 table.insert(components.active[2], {
-  provider = function()
-    local node = require("nvim-treesitter.ts_utils").get_node_at_cursor()
-    return ("%d:%s [%d, %d] - [%d, %d]")
-      :format(node:symbol(), node:type(), node:range())
-  end,
-  enabled = function()
-    local ok, ts_parsers = pcall(require, "nvim-treesitter.parsers")
-    return ok and ts_parsers.has_parser()
-  end
+	provider = function()
+		return gps.get_location()
+	end,
+	enabled = function()
+		return gps.is_available()
+	end
 })
+-- table.insert(components.active[2], {
+--   provider = function()
+--     local node = require("nvim-treesitter.ts_utils").get_node_at_cursor()
+--     return ("%d:%s [%d, %d] - [%d, %d]")
+--       :format(node:symbol(), node:type(), node:range())
+--   end,
+--   enabled = function()
+--     local ok, ts_parsers = pcall(require, "nvim-treesitter.parsers")
+--     return ok and ts_parsers.has_parser()
+--   end
+-- })
 
 -- require'feline'.setup {}
 require'feline'.setup {

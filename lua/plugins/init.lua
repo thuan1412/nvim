@@ -97,6 +97,10 @@ return require('packer').startup(function()
   -- status line
   --
   use { 'feline-nvim/feline.nvim' }
+  use {
+    "SmiteshP/nvim-gps",
+    requires = "nvim-treesitter/nvim-treesitter"
+  }
 
   -- icons
   use { 'kyazdani42/nvim-web-devicons' }
