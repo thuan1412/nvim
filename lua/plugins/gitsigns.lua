@@ -1,3 +1,4 @@
+require("gitsigns").setup()
 -- MAPPING
 local nvim_set_keymap = vim.api.nvim_set_keymap
 
