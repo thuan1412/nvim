@@ -3,7 +3,8 @@ local nvim_set_keymap = vim.api.nvim_set_keymap
 
 local opts = { silent = true }
 -- Telescope utils
-nvim_set_keymap("n", "<space>t", "<cmd>Telescope<CR>", opts)
+nvim_set_keymap("n", "<space>tt", "<cmd>Telescope<CR>", opts)
+nvim_set_keymap("n", "<space>tr", "<cmd>Telescope resume<CR>", opts)
 nvim_set_keymap("n", "<space>w", "<cmd>Telescope live_grep<CR>", opts)
 nvim_set_keymap("n", "<space>q", "<cmd>Telescope quickfix<CR>", opts)
 nvim_set_keymap("n", "<space>c", "<cmd>Telescope commands<CR>", opts)

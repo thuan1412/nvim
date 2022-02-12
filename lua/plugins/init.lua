@@ -117,6 +117,7 @@ return require("packer").startup(function()
   }
   use "mhartington/formatter.nvim"
 
+  -- TODO: show the progress of the lsp server
   -- icons
   use { "kyazdani42/nvim-web-devicons" }
   -- use 'famiu/bufdelete.nvim'
