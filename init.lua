@@ -10,4 +10,5 @@ require "plugins.cmp"
 require "plugins.feline"
 require "plugins.gitsigns"
 require "plugins.formatter"
+require "plugins.autopairs"
 -- require('impatient')

@@ -100,6 +100,11 @@ return require("packer").startup(function()
     end,
   }
 
+  -- autopairs
+  use {
+    "windwp/nvim-autopairs",
+  }
+
   -- impatent
   use "lewis6991/impatient.nvim"
 
