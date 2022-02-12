@@ -40,6 +40,7 @@ local servers = {
     },
   },
   tsserver = true,
+  pyright = true,
   -- eslint = true,
   volar = true,
   gopls = {

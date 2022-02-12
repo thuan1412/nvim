@@ -31,6 +31,18 @@ require("formatter").setup {
         return { exe = "gofmt", args = {}, stdin = true }
       end,
     },
+    python = {
+      function()
+        return {
+          exe = "autopep8",
+          args = {
+            "--in-place --aggressive --aggressive",
+            vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
+          },
+          stdin = false,
+        }
+      end,
+    },
     lua = {
       -- luafmt
       function()
