@@ -290,17 +290,38 @@ table.insert(components.active[2], {
     return gps.is_available()
   end,
 })
--- table.insert(components.active[2], {
---   provider = function()
---     local node = require("nvim-treesitter.ts_utils").get_node_at_cursor()
---     return ("%d:%s [%d, %d] - [%d, %d]")
---       :format(node:symbol(), node:type(), node:range())
---   end,
---   enabled = function()
---     local ok, ts_parsers = pcall(require, "nvim-treesitter.parsers")
---     return ok and ts_parsers.has_parser()
---   end
--- })
+
+table.insert(components.active[3], {
+  provider = function()
+    local Lsp = vim.lsp.util.get_progress_messages()[1]
+    if Lsp then
+      local msg = Lsp.message or ""
+      local percentage = Lsp.percentage or 0
+      local title = Lsp.title or ""
+      local spinners = {
+        "",
+        "",
+        "",
+      }
+
+      local success_icon = {
+        "",
+        "",
+        "",
+      }
+
+      local ms = vim.loop.hrtime() / 1000000
+      local frame = math.floor(ms / 120) % #spinners
+
+      if percentage >= 70 then
+        return string.format(" %%<%s %s %s (%s%%%%) ", success_icon[frame + 1], title, msg, percentage)
+      else
+        return string.format(" %%<%s %s %s (%s%%%%) ", spinners[frame + 1], title, msg, percentage)
+      end
+    end
+    return ""
+  end,
+})
 
 -- require'feline'.setup {}
 require("feline").setup {
