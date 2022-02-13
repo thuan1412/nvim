@@ -16,6 +16,7 @@ end
 -- Only required if you have packer configured as `opt`
 -- vim.cmd [[packadd packer.nvim]]
 return require("packer").startup(function()
+  use "wbthomason/packer.nvim"
   use {
     "nvim-lua/plenary.nvim",
   }
@@ -69,11 +70,6 @@ return require("packer").startup(function()
   -- lsp
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
-  -- use "mattn/vim-lsp-settings"
-  use {
-    "ray-x/lsp_signature.nvim",
-    after = "nvim-lspconfig",
-  }
 
   -- cmp
   use "hrsh7th/cmp-nvim-lsp"
@@ -116,9 +112,13 @@ return require("packer").startup(function()
     requires = "nvim-treesitter/nvim-treesitter",
   }
   use "mhartington/formatter.nvim"
+  use { "kevinhwang91/nvim-hlslens" }
 
-  -- TODO: show the progress of the lsp server
   -- icons
   use { "kyazdani42/nvim-web-devicons" }
+  use {
+    "ray-x/lsp_signature.nvim",
+    after = "nvim-lspconfig",
+  }
   -- use 'famiu/bufdelete.nvim'
 end)

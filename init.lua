@@ -11,4 +11,7 @@ require "plugins.feline"
 require "plugins.gitsigns"
 require "plugins.formatter"
 require "plugins.autopairs"
+-- TODO: IDK, lsp_signature is not available at the very time
+-- require "lsp_signature".setup()
+-- require("hlslens").stetup()
 -- require('impatient')
