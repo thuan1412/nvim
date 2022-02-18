@@ -28,7 +28,7 @@ set.timeoutlen = 500
 set.undofile = true -- keep a permanent undo (across restarts)
 
 -- set colorscheme
-vim.g.tokyonight_style = "do" -- TODO: move this config into plugins/init.lua
+vim.g.tokyonight_style = "day" -- TODO: move this config into plugins/init.lua
 vim.g.material_style = "oceanic"
 --vim.cmd 'colorscheme material'
 vim.cmd [[colorscheme tokyonight]]

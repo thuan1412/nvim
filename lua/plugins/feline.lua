@@ -3,8 +3,8 @@ if not pcall(require, "feline") then
 end
 
 local colors = {
-  bg = "#282c34",
-  fg = "#abb2bf",
+  bg = "#f1f1f1",
+  fg = "#424242",
   yellow = "#e0af68",
   cyan = "#56b6c2",
   darkblue = "#081633",
