@@ -2,7 +2,7 @@ require("Comment").setup {
   toggler = {
     ignore = "^$",
     ---Line-comment toggle keymap
-    line = "?",
+    line = "gcc",
     ---Block-comment toggle keymap
     block = "gbc",
   },

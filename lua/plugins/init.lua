@@ -120,5 +120,10 @@ return require("packer").startup(function()
     "ray-x/lsp_signature.nvim",
     after = "nvim-lspconfig",
   }
+
+  -- rust set up
+  use "simrat39/rust-tools.nvim"
   -- use 'famiu/bufdelete.nvim'
+
+  use "github/copilot.vim"
 end)
