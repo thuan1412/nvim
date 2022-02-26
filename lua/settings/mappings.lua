@@ -15,6 +15,10 @@ nvim_set_keymap("n", "<space>b", "<cmd>Telescope buffers<CR>", opts)
 -- nvim_set_keymap("n", "<space>fh", "<cmd>Telescope find_files hidden=true<CR>", opts)
 nvim_set_keymap("n", "<space>h", "<cmd>Telescope oldfiles only_cwd=true<CR>", opts)
 nvim_set_keymap("n", "<space>km", "<cmd>Telescope keymaps<CR>", opts)
+nvim_set_keymap("n", "<space>gstt", "<cmd>Telescope git_status<CR>", opts)
+nvim_set_keymap("n", "<space>gsth", "<cmd>Telescope git_stash<CR>", opts)
+nvim_set_keymap("n", "<space>gcm", "<cmd>Telescope git_commits<CR>", opts)
+nvim_set_keymap("n", "<space>gcbm", "<cmd>Telescope git_bcommits<CR>", opts)
 
 -- LSP API
 nvim_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
