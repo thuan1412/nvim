@@ -36,3 +36,6 @@ nvim_set_keymap("n", "gi", "<cmd>Telescope lsp_implementations path_display={'sh
 -- Format
 nvim_set_keymap("n", "<leader>f", "<cmd> Format<CR>", opts)
 nvim_set_keymap("n", "<Esc>", "<cmd>:noh<CR>", opts)
+
+-- <leader>w for save file
+nvim_set_keymap("n", "<leader>w", ":noa update<CR>", {noremap = true, silent = true})

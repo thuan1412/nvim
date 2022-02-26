@@ -127,4 +127,10 @@ return require("packer").startup(function()
   -- use 'famiu/bufdelete.nvim'
 
   use "github/copilot.vim"
+
+  use "lukas-reineke/indent-blankline.nvim"
+
+  use "liuchengxu/vista.vim"
+  -- add fzf https://github.com/ibhagwan/fzf-lua
+  -- add colorizer https://github.com/norcalli/nvim-colorizer.lua
 end)
