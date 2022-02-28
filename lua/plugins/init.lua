@@ -25,6 +25,9 @@ return require("packer").startup(function()
   use {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
+    setup = function()
+      require "plugins.telescope"
+    end,
     require = {
       "",
     },
@@ -130,7 +133,14 @@ return require("packer").startup(function()
 
   use "lukas-reineke/indent-blankline.nvim"
 
-  use "liuchengxu/vista.vim"
+  use {
+
+    "liuchengxu/vista.vim",
+    cmd = "Vista",
+    setup = function()
+      require "plugins.vista"
+    end,
+  }
   -- add fzf https://github.com/ibhagwan/fzf-lua
   -- add colorizer https://github.com/norcalli/nvim-colorizer.lua
 end)

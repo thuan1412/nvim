@@ -1,5 +1,6 @@
 require "settings"
 
+require('impatient')
 ----- PLUGINS
 require "plugins"
 
@@ -18,4 +19,3 @@ require('rust-tools').setup({})
 -- TODO: IDK, lsp_signature is not available at the very time
 -- require "lsp_signature".setup()
 -- require("hlslens").stetup()
--- require('impatient')

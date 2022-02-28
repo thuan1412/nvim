@@ -35,9 +35,9 @@ telescope.setup {
       height = 0.80,
       preview_cutoff = 120,
     },
-    file_sorter = require("telescope.sorters").get_fuzzy_file,
+    -- file_sorter = require("telescope.sorters").get_fuzzy_file, -- TODO: fix
     file_ignore_patterns = { "node_modules" },
-    generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
+    -- generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
     path_display = { "absolute" },
     winblend = 0,
     border = {},
@@ -45,11 +45,11 @@ telescope.setup {
     color_devicons = true,
     use_less = true,
     set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
-    file_previewer = require("telescope.previewers").vim_buffer_cat.new,
-    grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
-    qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
-    -- Developer configurations: Not meant for general override
-    buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+    -- file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+    -- grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+    -- qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+    -- -- Developer configurations: Not meant for general override
+    -- buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
   },
   extensions = {
     fzf = {
@@ -86,7 +86,7 @@ telescope.setup {
         local res_path = vim.fn.fnamemodify(path, ":.")
         return res_path
       end,
-      grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+      -- grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
     },
     oldfiles = {
       initial_mode = "normal",
@@ -95,6 +95,12 @@ telescope.setup {
         local res_path = vim.fn.fnamemodify(path, ":.")
         return res_path
       end,
+    },
+    lsp_code_actions = {
+      initial_mode = "normal",
+    },
+    lsp_definitions = {
+      initial_mode = "normal",
     },
   },
 }

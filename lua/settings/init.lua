@@ -37,3 +37,4 @@ require "settings.mappings"
 -- disable copilot by default
 vim.g.copilot_enabled = true
 vim.g.copilot_no_tab_map = true -- bug conflict with cmp https://github.com/hrsh7th/nvim-cmp/issues/459
+vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
