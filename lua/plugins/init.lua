@@ -141,6 +141,15 @@ return require("packer").startup(function()
       require "plugins.vista"
     end,
   }
+
+  use {
+      'kyazdani42/nvim-tree.lua',
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icon
+      },
+      config = function() require'nvim-tree'.setup {} end
+  }
+
   -- add fzf https://github.com/ibhagwan/fzf-lua
   -- add colorizer https://github.com/norcalli/nvim-colorizer.lua
 end)

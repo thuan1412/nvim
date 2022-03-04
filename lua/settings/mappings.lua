@@ -55,3 +55,6 @@ nvim_set_keymap("n", "<Esc>", "<cmd>:noh<CR>", opts)
 
 -- <leader>w for save file
 nvim_set_keymap("n", "<leader>w", ":w <CR>", { noremap = true, silent = true })
+
+-- nvim tree
+nvim_set_keymap("n", "<space>e", ":NvimTreeToggle <CR>", opts)

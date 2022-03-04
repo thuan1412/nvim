@@ -15,6 +15,7 @@ require "plugins.autopairs"
 require "plugins.telescope"
 require "plugins.indent-blankline"
 require "plugins.vista"
+require "plugins.nvimtree"
 require('rust-tools').setup({})
 -- TODO: IDK, lsp_signature is not available at the very time
 -- require "lsp_signature".setup()
