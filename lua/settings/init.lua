@@ -15,7 +15,7 @@ set.shiftwidth = TAB_WIDTH
 set.expandtab = true
 
 -- sync clipboard
-set.clipboard = "unnamedplus"
+set.clipboard = "unnamed,unnamedplus"
 
 -- set smartcase
 set.ignorecase = true

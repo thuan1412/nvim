@@ -36,7 +36,7 @@ telescope.setup {
       preview_cutoff = 120,
     },
     -- file_sorter = require("telescope.sorters").get_fuzzy_file, -- TODO: fix
-    file_ignore_patterns = { "node_modules" },
+    file_ignore_patterns = { "node_modules", "venv" },
     -- generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
     path_display = { "absolute" },
     winblend = 0,
@@ -105,8 +105,8 @@ telescope.setup {
   },
 }
 
-local extensions = { "fzf" }
+-- local extensions = { "fzf" }
 
-for _, ext in ipairs(extensions) do
-  telescope.load_extension(ext)
-end
+-- for _, ext in ipairs(extensions) do
+--   telescope.load_extension(ext)
+-- end
