@@ -18,5 +18,5 @@ require "plugins.feline"
 require "plugins.outline"
 require('rust-tools').setup({})
 -- TODO: IDK, lsp_signature is not available at the very time
--- require "lsp_signature".setup()
+require "lsp_signature".setup()
 -- require("hlslens").stetup()

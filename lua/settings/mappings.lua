@@ -58,3 +58,5 @@ nvim_set_keymap("n", "<leader>w", ":w <CR>", { noremap = true, silent = true })
 
 -- nvim tree
 nvim_set_keymap("n", "<space>e", ":NvimTreeToggle <CR>", opts)
+
+nvim_set_keymap("n", "<space>so", ":so ~/.config/nvim/init.lua<CR>", opts)

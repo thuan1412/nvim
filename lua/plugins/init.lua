@@ -113,7 +113,6 @@ return require("packer").startup(function()
   use { "kyazdani42/nvim-web-devicons" }
   use {
     "ray-x/lsp_signature.nvim",
-    after = "nvim-lspconfig",
   }
 
   -- rust set up
@@ -134,7 +133,9 @@ return require("packer").startup(function()
   --   end,
   -- }
 
-  use { 'kyazdani42/nvim-tree.lua' }
+  use {
+    "kyazdani42/nvim-tree.lua",
+  }
 
   -- add fzf https://github.com/ibhagwan/fzf-lua
   -- add colorizer https://github.com/norcalli/nvim-colorizer.lua

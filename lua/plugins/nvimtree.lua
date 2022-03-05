@@ -3,7 +3,6 @@ if not present then
   print "nvimtree is not exist"
 end
 
-print(tree)
 tree.setup {
   disable_netrw        = false,
   hijack_netrw         = true,
@@ -55,7 +54,11 @@ tree.setup {
     preserve_window_proportions = false,
     mappings = {
       custom_only = false,
-      list = {}
+      list = {
+        { key = "v", action = "vsplit" },
+        { key = "s", action = "split" },
+        { key = "?", action = "toggle_help" },
+      }
     },
     number = false,
     relativenumber = false,
@@ -84,3 +87,4 @@ tree.setup {
     }
   }
 }
+
