@@ -22,16 +22,7 @@ return require("packer").startup(function()
   }
 
   -- telescope
-  use {
-    "nvim-telescope/telescope.nvim",
-    cmd = "Telescope",
-    setup = function()
-      require "plugins.telescope"
-    end,
-    require = {
-      "",
-    },
-  }
+  use { "nvim-telescope/telescope.nvim" }
   use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 
   -- stablize the popup
@@ -47,7 +38,7 @@ return require("packer").startup(function()
   use "tpope/vim-repeat"
   use "tpope/vim-speeddating"
   use "tpope/vim-surround"
-  use "tpope/vim-unimpaired"
+  -- use "tpope/vim-unimpaired"
   use "tpope/vim-dadbod"
 
   -- comment
@@ -133,22 +124,17 @@ return require("packer").startup(function()
 
   use "lukas-reineke/indent-blankline.nvim"
 
-  use {
+  use "simrat39/symbols-outline.nvim"
+  -- use {
+  --
+  --   "liuchengxu/vista.vim",
+  --   cmd = "Vista",
+  --   setup = function()
+  --     require "plugins.vista"
+  --   end,
+  -- }
 
-    "liuchengxu/vista.vim",
-    cmd = "Vista",
-    setup = function()
-      require "plugins.vista"
-    end,
-  }
-
-  use {
-      'kyazdani42/nvim-tree.lua',
-      requires = {
-        'kyazdani42/nvim-web-devicons', -- optional, for file icon
-      },
-      config = function() require'nvim-tree'.setup {} end
-  }
+  use { 'kyazdani42/nvim-tree.lua' }
 
   -- add fzf https://github.com/ibhagwan/fzf-lua
   -- add colorizer https://github.com/norcalli/nvim-colorizer.lua

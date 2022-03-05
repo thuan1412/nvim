@@ -1,9 +1,9 @@
 local present, tree = pcall(require, "nvim-tree")
 if not present then
-  print "telescope is not exist"
-  return
+  print "nvimtree is not exist"
 end
 
+print(tree)
 tree.setup {
   disable_netrw        = false,
   hijack_netrw         = true,
@@ -30,7 +30,7 @@ tree.setup {
     }
   },
   update_focused_file = {
-    enable      = false,
+    enable      = true,
     update_cwd  = false,
     ignore_list = {}
   },
