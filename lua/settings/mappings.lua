@@ -21,24 +21,8 @@ nvim_set_keymap("n", "<space>gcm", "<cmd>Telescope git_commits<CR>", opts)
 nvim_set_keymap("n", "<space>gcbm", "<cmd>Telescope git_bcommits<CR>", opts)
 nvim_set_keymap("n", "<space>s", "<cmd>Telescope lsp_workspace_symbols<CR>", opts)
 
-nvim_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
-nvim_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
--- LSP API
--- TODO: remove unimpairs [e mapping
--- nvim_set_keymap(
---   "n",
---   "]e",
---   "<cmd>lua vim.lsp.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>",
---   opts
--- )
--- nvim_set_keymap(
---   "n",
---   "[e",
---   "<cmd>lua vim.lsp.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<CR>",
---   opts
--- )
--- nvim_set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next({severity = vim.diagnostic.severity.INFO})<CR>", opts)
--- nvim_set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev({severity = vim.diagnostic.severity.INFO})<CR>", opts)
+nvim_set_keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+nvim_set_keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 nvim_set_keymap("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 nvim_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)

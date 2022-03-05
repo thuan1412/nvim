@@ -42,6 +42,7 @@ local servers = {
   tsserver = true,
   pyright = true,
   rust_analyzer = {
+    cmd = {"~/.local/share/nvim/lsp_servers/rust/rust-analyzer"},
     settings = {
       ["rust-analyzer"] = {
         assist = {
