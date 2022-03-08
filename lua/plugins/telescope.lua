@@ -72,7 +72,7 @@ telescope.setup {
   pickers = {
     lsp_references = {
       initial_mode = "normal",
-      layout_strategy = "horizontal",
+      layout_strategy = "vertical",
       layout_config = {
         vertical = {
           height = 0.3,
@@ -87,6 +87,30 @@ telescope.setup {
         return res_path
       end,
       -- grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+    },
+    lsp_implementations = {
+      initial_mode = "normal",
+      layout_strategies = "vertical",
+      layout_config = {
+        vertical = {
+          height = 0.3,
+          width = 0.85,
+          preview_height = 0.5,
+          preview_cutoff = 120,
+        },
+      },
+    },
+    quickfix = {
+      initial_mode = "normal",
+      layout_strategies = "vertical",
+      layout_config = {
+        vertical = {
+          height = 0.3,
+          width = 0.85,
+          preview_height = 0.5,
+          preview_cutoff = 120,
+        },
+      },
     },
     oldfiles = {
       initial_mode = "normal",

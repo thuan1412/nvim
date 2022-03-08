@@ -136,6 +136,16 @@ return require("packer").startup(function()
   use "kyazdani42/nvim-tree.lua"
 
   use "norcalli/nvim-colorizer.lua"
+
+  use "ray-x/go.nvim"
+  use {
+    "anuvyklack/pretty-fold.nvim",
+    config = function()
+      require("pretty-fold").setup {}
+      require("pretty-fold.preview").setup()
+    end,
+  }
+  use "endel/vim-github-colorscheme"
   -- add fzf https://github.com/ibhagwan/fzf-lua
   -- add colorizer https://github.com/norcalli/nvim-colorizer.lua
 end)

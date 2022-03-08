@@ -30,6 +30,7 @@ set.undofile = true -- keep a permanent undo (across restarts)
 -- set colorscheme
 vim.g.tokyonight_style = "day" -- TODO: move this config into plugins/init.lua
 vim.g.material_style = "oceanic"
+set.termguicolors = true
 --vim.cmd 'colorscheme material'
 vim.cmd [[colorscheme tokyonight]]
 require "settings.mappings"

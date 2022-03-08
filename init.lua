@@ -19,6 +19,7 @@ require("colorizer").setup {
   "!*",
 }
 require("rust-tools").setup {}
+require("go").setup()
 -- TODO: IDK, lsp_signature is not available at the very time
 require("lsp_signature").setup()
 -- require("hlslens").stetup()
