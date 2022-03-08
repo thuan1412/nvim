@@ -42,5 +42,25 @@ nvim_set_keymap("n", "<leader>w", ":w <CR>", { noremap = true, silent = true })
 
 -- nvim tree
 nvim_set_keymap("n", "<space>e", ":NvimTreeToggle <CR>", opts)
+nvim_set_keymap("n", "<A-e>", ":NvimTreeToggle <CR>", opts)
 
 nvim_set_keymap("n", "<space>so", ":so ~/.config/nvim/init.lua<CR>", opts)
+
+-- override windows switch keymaps
+nvim_set_keymap("n", "<A-v>", ":vsplit <CR>", opts)
+nvim_set_keymap("n", "<A-s>", ":split <CR>", opts)
+nvim_set_keymap("n", "<A-c>", ":close <CR>", opts)
+nvim_set_keymap("n", "<A-o>", "<C-w>o", opts)
+nvim_set_keymap("n", "<A-H>", "<C-w>H", opts)
+nvim_set_keymap("n", "<A-K>", "<C-w>K", opts)
+
+nvim_set_keymap("n", "<A-h>", "<C-w>h", { noremap = true, silent = true })
+nvim_set_keymap("n", "<A-j>", "<C-w>j", { noremap = true, silent = true })
+nvim_set_keymap("n", "<A-k>", "<C-w>k", { noremap = true, silent = true })
+nvim_set_keymap("n", "<A-l>", "<C-w>l", { noremap = true, silent = true })
+
+-- change window size
+nvim_set_keymap("n", "<C-Up>", ":resize -2<CR>", opts)
+nvim_set_keymap("n", "<C-Down>", ":resize +2<CR>", opts)
+nvim_set_keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
+nvim_set_keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
