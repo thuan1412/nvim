@@ -33,10 +33,9 @@ telescope.setup {
       },
       width = 0.87,
       height = 0.80,
-      preview_cutoff = 120,
     },
     -- file_sorter = require("telescope.sorters").get_fuzzy_file, -- TODO: fix
-    file_ignore_patterns = { "node_modules", "venv" },
+    file_ignore_patterns = { "node_modules", "venv", "pb.go", "pb2.py", "validate.go", "gw.go" },
     -- generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
     path_display = { "absolute" },
     winblend = 0,
@@ -74,12 +73,7 @@ telescope.setup {
       initial_mode = "normal",
       layout_strategy = "vertical",
       layout_config = {
-        vertical = {
-          height = 0.3,
-          width = 0.85,
-          preview_height = 0.5,
-          preview_cutoff = 120,
-        },
+        prompt_position = "top",
       },
       path_display = function(opts, path)
         -- local cwd = vim.fn.expand("%:p:h")
@@ -93,10 +87,10 @@ telescope.setup {
       layout_strategies = "vertical",
       layout_config = {
         vertical = {
+          prompt_position = "top",
           height = 0.3,
           width = 0.85,
           preview_height = 0.5,
-          preview_cutoff = 120,
         },
       },
     },
@@ -108,7 +102,6 @@ telescope.setup {
           height = 0.3,
           width = 0.85,
           preview_height = 0.5,
-          preview_cutoff = 120,
         },
       },
     },
