@@ -23,3 +23,8 @@ require("go").setup()
 -- TODO: IDK, lsp_signature is not available at the very time
 require("lsp_signature").setup()
 -- require("hlslens").stetup()
+--
+-- fold
+-- add autocmd to save view when buf close and load view when open file
+vim.cmd("autocmd BufWinLeave *.* mkview")
+vim.cmd("autocmd BufWinEnter *.* silent loadview")
