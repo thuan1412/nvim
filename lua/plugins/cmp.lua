@@ -12,7 +12,7 @@ require("luasnip.loaders.from_vscode").load()
 local luasnip = require "luasnip"
 luasnip.filetype_extend("typescript", { "javascript" })
 luasnip.filetype_extend("javascriptreact", { "javascript" })
-luasnip.filetype_extend("typescriptreact", { "javascriptreact", "typescript", "javascript" })
+luasnip.filetype_extend("typescriptreact", { "javascriptreact", "typescript", "javascript", "html"})
 
 -- require("luasnip.loaders.from_vscode").lazy_load()
 -- local nvim_set_keymap = vim.api.nvim_set_keymap
