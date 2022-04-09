@@ -7,3 +7,6 @@ Remember to update the sumneko executable path
 
 - SQLite
 Follow the docs `https://github.com/tami5/sqlite.lua`
+
+## Comment.nvim
+Remember to install treesitter for react.
