@@ -22,7 +22,17 @@ return require("packer").startup(function()
   }
 
   -- telescope
-  use { "nvim-telescope/telescope.nvim" }
+  -- use { "tami5/sqlite.lua" }
+  use {
+    "nvim-telescope/telescope.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      -- {
+      --   { "tami5/sqlite.lua" },
+      -- },
+    },
+  }
+  use { "nvim-telescope/telescope-smart-history.nvim" }
   use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 
   -- stablize the popup

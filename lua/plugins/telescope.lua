@@ -1,4 +1,5 @@
 local present, telescope = pcall(require, "telescope")
+local actions = require "telescope.actions"
 if not present then
   print "telescope is not exist"
   return
@@ -34,6 +35,12 @@ telescope.setup {
       width = 0.87,
       height = 0.80,
     },
+    mappings = {
+      i = {
+        ["<C-k>"] = actions.cycle_history_next,
+        ["<C-j>"] = actions.cycle_history_prev,
+      },
+    },
     -- file_sorter = require("telescope.sorters").get_fuzzy_file, -- TODO: fix
     file_ignore_patterns = { "node_modules", "venv", "pb.go", "pb2.py", "validate.go", "gw.go" },
     -- generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
@@ -44,6 +51,10 @@ telescope.setup {
     color_devicons = true,
     use_less = true,
     set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
+    history = {
+      path = "~/.local/share/nvim/databases/telescope_history.sqlite3",
+      limit = 100,
+    },
     -- file_previewer = require("telescope.previewers").vim_buffer_cat.new,
     -- grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
     -- qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
@@ -122,8 +133,11 @@ telescope.setup {
   },
 }
 
--- local extensions = { "fzf" }
+local extensions = {
+  -- "fzf",
+  "smart_history",
+}
 
--- for _, ext in ipairs(extensions) do
---   telescope.load_extension(ext)
--- end
+for _, ext in ipairs(extensions) do
+  telescope.load_extension(ext)
+end
