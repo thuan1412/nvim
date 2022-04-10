@@ -1,4 +1,5 @@
 require "settings"
+require("settings.globals")
 require "impatient"
 ----- PLUGINS
 require "plugins"
@@ -15,6 +16,7 @@ require "plugins.indent-blankline"
 require "plugins.nvimtree"
 require "plugins.feline"
 require "plugins.outline"
+require "plugins.dap"
 require("colorizer").setup {
   "!*",
 }

@@ -50,6 +50,14 @@ return require("packer").startup(function()
   use "tpope/vim-surround"
   -- use "tpope/vim-unimpaired"
   use "tpope/vim-dadbod"
+  use {
+    "tpope/vim-scriptease",
+    cmd = {
+      "Messages", --view messages in quickfix list
+      "Verbose", -- view verbose output in preview window.
+      "Time", -- measure how long it takes to run some stuff.
+    },
+  }
 
   -- comment
   use {
@@ -156,6 +164,11 @@ return require("packer").startup(function()
     end,
   }
   use "endel/vim-github-colorscheme"
+
+  -- dap
+  use "mfussenegger/nvim-dap"
+  use "rcarriga/nvim-dap-ui"
+  use "theHamsta/nvim-dap-virtual-text"
   -- add fzf https://github.com/ibhagwan/fzf-lua
   -- add colorizer https://github.com/norcalli/nvim-colorizer.lua
 end)
