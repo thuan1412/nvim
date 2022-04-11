@@ -16,6 +16,26 @@ end
 -- Only required if you have packer configured as `opt`
 -- vim.cmd [[packadd packer.nvim]]
 return require("packer").startup(function()
+  -- copy from tj
+  local local_use = function(first, second, opts)
+    opts = opts or {}
+
+    local plug_path, home
+    if second == nil then
+      plug_path = first
+      home = "thuando"
+    else
+      plug_path = second
+      home = first
+    end
+
+    if vim.fn.isdirectory(vim.fn.expand("~/code/vim-plugins/" .. plug_path)) == 1 then
+      opts[1] = "~/code/vim-plugins/" .. plug_path
+    else
+      opts[1] = string.format("%s/%s", home, plug_path)
+    end
+    use(opts)
+  end
   use "wbthomason/packer.nvim"
   use {
     "nvim-lua/plenary.nvim",
@@ -166,7 +186,8 @@ return require("packer").startup(function()
   use "endel/vim-github-colorscheme"
 
   -- dap
-  use "mfussenegger/nvim-dap"
+  local_use "nvim-dap"
+  -- use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
   use "theHamsta/nvim-dap-virtual-text"
   -- add fzf https://github.com/ibhagwan/fzf-lua
