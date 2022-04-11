@@ -24,6 +24,7 @@ map("n", "<F2>", ":lua require('dap').step_into()<CR>", map_ops)
 map("n", "<F3>", ":lua require('dap').step_over()<CR>", map_ops)
 map("n", "<F4>", ":lua require('dap').step_out()<CR>", map_ops)
 map("n", "<F5>", ":lua require('dap').continue()<CR>", map_ops)
+map("n", "<F6>", ":lua require('dap').terminate()<CR>", map_ops)
 
 require("nvim-dap-virtual-text").setup {
   enabled = true,
@@ -97,23 +98,34 @@ dap.configurations.go = {
     program = "${workspaceFolder}/cmd",
     showLog = true,
     args = { "server" },
+-- TODO: debug for a single test case
+
+local dap_python = require "dap-python"
+dap_python.setup("python", {
+  -- So if configured correctly, this will open up new terminal.
+  --    Could probably get this to target a particular terminal
+  --    and/or add a tab to kitty or something like that as well.
+  console = "externalTerminal",
+
+  include_configs = true,
+})
+table.insert(dap.configurations.python, {
+  name = "Python flask",
+  type = "python",
+  request = "launch",
+  module = "flask",
+  env = {
+    FLASK_APP = "app.py",
+    FLASK_NEW = "development",
   },
-  {
-    type = "go",
-    name = "Debug test", -- configuration for debugging test files
-    request = "launch",
-    mode = "test",
-    program = "${file}",
+  args = {
+    "run",
+    "--no-debugger",
   },
-  -- works with go.mod packages and sub packages
-  {
-    type = "go",
-    name = "Debug test (go.mod)",
-    request = "launch",
-    mode = "test",
-    program = "./${relativeFileDirname}",
-  },
-}
+  jinja = true,
+  justMyCode = true,
+})
+-- end
 
 vim.fn.dap_curle = function(arg)
   require("dap").run {
