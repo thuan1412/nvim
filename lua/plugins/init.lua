@@ -42,14 +42,11 @@ return require("packer").startup(function()
   }
 
   -- telescope
-  -- use { "tami5/sqlite.lua" }
+  use { "tami5/sqlite.lua" }
   use {
     "nvim-telescope/telescope.nvim",
     requires = {
       "nvim-lua/plenary.nvim",
-      -- {
-      --   { "tami5/sqlite.lua" },
-      -- },
     },
   }
   use { "nvim-telescope/telescope-smart-history.nvim" }
