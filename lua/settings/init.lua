@@ -33,11 +33,15 @@ vim.g.material_style = "oceanic"
 set.termguicolors = true
 --vim.cmd 'colorscheme material'
 vim.cmd [[colorscheme tokyonight]]
-require "settings.mappings"
 
 -- disable copilot by default
 vim.g.copilot_enabled = true
 vim.g.copilot_no_tab_map = true -- bug conflict with cmp https://github.com/hrsh7th/nvim-cmp/issues/459
 vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
+-- filetype
+vim.g.do_filetype_lua = 1
+vim.g.did_load_filetypes = 0
+
 require "settings.autocmd"
+require "settings.mappings"

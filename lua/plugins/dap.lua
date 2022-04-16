@@ -93,11 +93,29 @@ dap.configurations.go = {
   },
   {
     type = "go",
+    name = "Debug the current test file",
+    request = "launch",
+    mode = "test",
+    program = "./${relativeFileDirname}",
+    env = {
+      RUNNING_ENV = "local",
+    },
+  },
+}
+
+local cwd = vim.fn.getcwd()
+local cmdMainPath = cwd .. "/cmd"
+if vim.fn.isdirectory(cmdMainPath) == 1 then
+  dap.configurations.go[#dap.configurations.go + 1] = {
+    type = "go",
     name = "Debug cmd folder",
     request = "launch",
     program = "${workspaceFolder}/cmd",
     showLog = true,
     args = { "server" },
+  }
+end
+
 -- TODO: debug for a single test case
 
 local dap_python = require "dap-python"

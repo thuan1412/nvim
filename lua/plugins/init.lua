@@ -186,10 +186,11 @@ return require("packer").startup(function()
   use "endel/vim-github-colorscheme"
 
   -- dap
-  local_use "nvim-dap"
-  -- use "mfussenegger/nvim-dap"
+  -- local_use "nvim-dap"
+  use "mfussenegger/nvim-dap"
   use "rcarriga/nvim-dap-ui"
   use "theHamsta/nvim-dap-virtual-text"
+  use "mfussenegger/nvim-dap-python"
   -- add fzf https://github.com/ibhagwan/fzf-lua
   -- add colorizer https://github.com/norcalli/nvim-colorizer.lua
 end)
