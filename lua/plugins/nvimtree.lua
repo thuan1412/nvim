@@ -3,6 +3,20 @@ if not present then
   print "nvimtree is not exist"
 end
 
+local function getDirFromPath(path)
+  if path:match "/" then
+    return path:match "(.*)/"
+  else
+    return path:match "(.*)\\"
+  end
+end
+
+local function findInFolder(node)
+  local absolute_path = node.absolute_path
+  local dir = getDirFromPath(absolute_path)
+  require("telescope.builtin").live_grep { cwd = dir }
+end
+
 tree.setup {
   disable_netrw = false,
   hijack_netrw = true,
@@ -93,6 +107,7 @@ tree.setup {
         { key = "S", action = "search_node" },
         { key = "<C-k>", action = "toggle_file_info" },
         { key = ".", action = "run_file_command" },
+        { key = "f", action = "find in folder", action_cb = findInFolder },
       },
     },
     number = false,
