@@ -127,6 +127,7 @@ dap_python.setup("python", {
 
   include_configs = true,
 })
+
 table.insert(dap.configurations.python, {
   name = "Python flask",
   type = "python",
@@ -141,6 +142,16 @@ table.insert(dap.configurations.python, {
     "--no-debugger",
   },
   jinja = true,
+  justMyCode = true,
+})
+
+table.insert(dap.configurations.python, {
+  name = "Python: Django",
+  type = "python",
+  request = "launch",
+  program = "${workspaceFolder}/manage.py",
+  args = { "runserver" },
+  django = true,
   justMyCode = true,
 })
 -- end

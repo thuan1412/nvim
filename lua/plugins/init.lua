@@ -95,7 +95,8 @@ return require("packer").startup(function()
   use { "dracula/vim", as = "dracula" }
   use "folke/tokyonight.nvim"
   use "marko-cerovac/material.nvim"
-  -- use https://github.com/nvim-lualine/lualine.nvim
+  use "morhetz/gruvbox"
+  use "projekt0n/github-nvim-theme"
 
   -- lsp
   use "neovim/nvim-lspconfig"
