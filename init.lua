@@ -17,12 +17,14 @@ require "plugins.nvimtree"
 require "plugins.feline"
 require "plugins.outline"
 require "plugins.dap"
+require "plugins.refactoring"
 require("colorizer").setup {
   "!*",
 }
+local a = "sadf"
 require("rust-tools").setup {}
 require("go").setup()
--- TODO: IDK, lsp_signature is not available at the very time
+
 require("lsp_signature").setup()
 -- require("hlslens").stetup()
 --
