@@ -53,6 +53,14 @@ vim.api.nvim_set_keymap(
   ":lua require('refactoring').debug.print_var({below = true})<CR>",
   { noremap = true }
 )
+local ab = 10
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>rv",
+  ":lua require('refactoring').debug.print_var({below = true})<CR>",
+  { noremap = true }
+)
 
 vim.api.nvim_set_keymap(
   "n",

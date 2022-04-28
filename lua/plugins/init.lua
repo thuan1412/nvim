@@ -190,13 +190,14 @@ return require("packer").startup(function()
   use "theHamsta/nvim-dap-virtual-text"
   use "mfussenegger/nvim-dap-python"
 
-  use {
-    "ThePrimeagen/refactoring.nvim",
-    requires = {
-      { "nvim-lua/plenary.nvim" },
-      { "nvim-treesitter/nvim-treesitter" },
-    },
-  }
+  local_use "refactoring.nvim"
+  -- use {
+  --   "ThePrimeagen/refactoring.nvim",
+  --   requires = {
+  --     { "nvim-lua/plenary.nvim" },
+  --     { "nvim-treesitter/nvim-treesitter" },
+  --   },
+  -- }
   -- add fzf https://github.com/ibhagwan/fzf-lua
   -- add colorizer https://github.com/norcalli/nvim-colorizer.lua
 end)
