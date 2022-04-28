@@ -130,6 +130,13 @@ telescope.setup {
     lsp_definitions = {
       initial_mode = "normal",
     },
+    lsp_dynamic_workspace_symbols = {
+      path_display = function(opts, path)
+        -- local cwd = vim.fn.expand("%:p:h")
+        local res_path = vim.fn.fnamemodify(path, ":.")
+        return res_path
+      end,
+    },
   },
 }
 
