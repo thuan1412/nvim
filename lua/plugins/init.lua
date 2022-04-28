@@ -189,6 +189,7 @@ return require("packer").startup(function()
   use "rcarriga/nvim-dap-ui"
   use "theHamsta/nvim-dap-virtual-text"
   use "mfussenegger/nvim-dap-python"
+  use "stevearc/dressing.nvim"
 
   local_use "refactoring.nvim"
   -- use {
