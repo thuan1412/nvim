@@ -19,6 +19,8 @@ require "plugins.outline"
 require "plugins.dap"
 require "plugins.refactoring"
 require "plugins.dressing"
+require "plugins.neoclip"
+
 require("colorizer").setup {
   "!*",
 }

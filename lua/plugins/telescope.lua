@@ -137,12 +137,25 @@ telescope.setup {
         return res_path
       end,
     },
+    neoclip = {
+      initial_mode = "normal",
+      layout_strategies = "vertical",
+      layout_config = {
+        vertical = {
+          prompt_position = "top",
+          height = 0.3,
+          width = 0.85,
+          preview_height = 0.5,
+        },
+      },
+    },
   },
 }
 
 local extensions = {
   -- "fzf",
   "smart_history",
+  "neoclip",
 }
 
 for _, ext in ipairs(extensions) do

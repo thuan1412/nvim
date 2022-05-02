@@ -192,6 +192,17 @@ return require("packer").startup(function()
   use "stevearc/dressing.nvim"
 
   local_use "refactoring.nvim"
+
+  use {
+    "AckslD/nvim-neoclip.lua",
+    requires = {
+      { "tami5/sqlite.lua", module = "sqlite" },
+      { "nvim-telescope/telescope.nvim" },
+    },
+    config = function()
+      require("neoclip").setup()
+    end,
+  }
   -- use {
   --   "ThePrimeagen/refactoring.nvim",
   --   requires = {
