@@ -90,6 +90,7 @@ return require("packer").startup(function()
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+  use {"nvim-treesitter/playground"}
 
   -- themes/colorschemes
   use { "dracula/vim", as = "dracula" }
@@ -122,9 +123,6 @@ return require("packer").startup(function()
   }
   use {
     "TimUntersberger/neogit",
-    config = function()
-      require("neogit").setup()
-    end,
   }
 
   -- autopairs

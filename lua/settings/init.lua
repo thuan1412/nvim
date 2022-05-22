@@ -13,6 +13,8 @@ set.expandtab = true
 -- sync clipboard
 set.clipboard = "unnamed,unnamedplus"
 
+set.mouse = 'a'
+
 -- set smartcase
 set.ignorecase = true
 set.smartcase = true

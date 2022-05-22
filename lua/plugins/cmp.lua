@@ -8,11 +8,13 @@ end
 vim.opt.completeopt = "menuone,noselect"
 require("luasnip.loaders.from_vscode").load()
 
+require('plugins.luasnip')
+
 -- config luasnip
 local luasnip = require "luasnip"
 luasnip.filetype_extend("typescript", { "javascript" })
 luasnip.filetype_extend("javascriptreact", { "javascript" })
-luasnip.filetype_extend("typescriptreact", { "javascriptreact", "typescript", "javascript", "html"})
+luasnip.filetype_extend("typescriptreact", { "javascriptreact", "typescript", "javascript", "html" })
 
 -- require("luasnip.loaders.from_vscode").lazy_load()
 -- local nvim_set_keymap = vim.api.nvim_set_keymap
@@ -58,19 +60,6 @@ cmp.setup {
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-Space>"] = cmp.mapping.complete(),
     ["<C-e>"] = cmp.mapping.close(),
-    -- ["<CR>"] = cmp.mapping(function ()
-    --   cmp.confirm({
-    --      behavior = cmp.ConfirmBehavior.Replace,
-    --      select = true,
-    --   })vim.lsp.buf.type_definition
-    -- end),
-    -- function(fallback)
-    --   print("confirm function is called", fallback)
-    --   cmp.confirm {
-    --      behavior = cmp.ConfirmBehavior.Replace,
-    --      select = true,
-    --   }
-    -- end,
     ["<CR>"] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
@@ -78,6 +67,8 @@ cmp.setup {
     ["<Tab>"] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
       else
         fallback()
       end
@@ -85,6 +76,8 @@ cmp.setup {
     ["<S-Tab>"] = function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.jump(-1)
       else
         fallback()
       end
@@ -99,8 +92,8 @@ cmp.setup {
   },
   sources = {
     { name = "nvim_lsp", keyword_length = 1 },
-    { name = "buffer", keyword_length = 1 },
     { name = "luasnip" },
+    { name = "buffer", keyword_length = 1 },
     { name = "nvim_lua" },
     { name = "path" },
   },

@@ -57,7 +57,7 @@ local ab = 10
 
 vim.api.nvim_set_keymap(
   "n",
-  "<space>rv",
+  "<leader>p",
   ":lua require('refactoring').debug.print_var({below = true})<CR>",
   { noremap = true }
 )

@@ -20,6 +20,7 @@ require "plugins.dap"
 require "plugins.refactoring"
 require "plugins.dressing"
 require "plugins.neoclip"
+require "plugins.neogit"
 
 require("colorizer").setup {
   "!*",
