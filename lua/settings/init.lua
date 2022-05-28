@@ -13,7 +13,7 @@ set.expandtab = true
 -- sync clipboard
 set.clipboard = "unnamed,unnamedplus"
 
-set.mouse = 'a'
+set.mouse = "a"
 
 -- set smartcase
 set.ignorecase = true
@@ -29,12 +29,14 @@ set.undofile = true -- keep a permanent undo (across restarts)
 set.termguicolors = true
 vim.cmd [[colorscheme github_light]]
 
+set.winbar = "%f%m"
+
 -- disable copilot by default
 vim.g.copilot_enabled = true
 vim.g.copilot_no_tab_map = true -- bug conflict with cmp https://github.com/hrsh7th/nvim-cmp/issues/459
 vim.api.nvim_set_keymap("i", "<C-j>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
-vim.g.gruvbox_contrast_light = 'hard'
+vim.g.gruvbox_contrast_light = "hard"
 
 -- filetype
 vim.g.do_filetype_lua = 1
